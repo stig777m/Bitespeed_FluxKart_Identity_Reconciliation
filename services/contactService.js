@@ -41,7 +41,6 @@ exports.identifyContact = async (email, phoneNumber) => {
           ]
         }
       });
-      console.log("primaryOfexistingSec",primaryOfexistingSec,"type of primaryOfexistingSec",typeof(primaryOfexistingSec));
       contacts.push(...primaryOfexistingSec);
     }
     else{
@@ -59,13 +58,8 @@ exports.identifyContact = async (email, phoneNumber) => {
             linkedId: { [Op.in]: ids }
         }
       });
-      console.log("primaryOfexistingSec",primaryOfexistingSec,"type of primaryOfexistingSec",typeof(primaryOfexistingSec));
       contacts.push(...primaryOfexistingSec);
     }
-    
-    
-    console.log("identifyContact-Contacts",contacts.map(contact => contact.id));
-    
     const contactRes = await processContact(contacts,email,phoneNumber);
 
     return contactRes;
