@@ -6,8 +6,6 @@ const { sequelize } = require('./models'); // Import Sequelize instance
 
 // Load environment variables
 dotenv.config();
-// Debugging: Print the DATABASE_URL to ensure it's being read correctly
-console.log('DATABASE_URL:', process.env.DATABASE_URL);
 
 const app = express();
 const PORT = process.env.PORT || 3000;
